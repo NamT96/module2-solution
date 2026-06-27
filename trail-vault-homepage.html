@@ -6,7 +6,7 @@
 <title>Trail Vault — Simplify Your Trail Book Management</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,'Segoe UI',Roboto,Inter,sans-serif}
-body{background:#f4f6f8;color:#0f172a;line-height:1.5}
+body{background:#f4f6f8;color:#0f172a;line-height:1.5;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 img{max-width:100%}
 .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
@@ -163,19 +163,53 @@ img{max-width:100%}
 .foot .social a:hover{background:#2563eb;color:#fff}
 .foot .bar{border-top:1px solid #1e293b;margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;flex-wrap:wrap;gap:10px}
 
-@media(max-width:900px){
+/* ---------- responsive ---------- */
+/* tablets / small laptops */
+@media(max-width:980px){
+  .nav .links{display:none}
   .kpis,.fgrid{grid-template-columns:repeat(2,1fr)}
   .prow,.os{grid-template-columns:1fr}
+  .os{gap:30px}
   .tgrid{columns:2}
   .shotgrid{grid-template-columns:1fr}
   .shotside{display:none}
-  .nav .links{display:none}
-  .hero h1{font-size:36px}
+  .hero h1{font-size:40px}
+  .shead h2,.os h2{font-size:30px}
   .foot .top{grid-template-columns:1fr 1fr}
 }
-@media(max-width:560px){
-  .kpis,.fgrid,.tgrid,.checks{grid-template-columns:1fr;columns:1}
-  .hero h1{font-size:30px}
+/* large phones */
+@media(max-width:680px){
+  .wrap{padding:0 18px}
+  .nav .wrap{height:58px;gap:10px}
+  .nav .btn:not(.primary),.theme{display:none}      /* keep only the primary CTA in the bar */
+  .hero{padding:44px 0 24px}
+  .hero h1{font-size:32px;letter-spacing:-1px}
+  .hero .lead{font-size:15px}
+  .hero .cta{flex-direction:column;align-items:stretch}
+  .hero .cta .btn{justify-content:center}
+  .preview{margin-top:32px;padding:12px;border-radius:14px}
+  .section{padding:40px 0}
+  .shead{margin-bottom:28px}
+  .shead h2,.os h2{font-size:25px}
+  .shead p,.os .lead{font-size:15px}
+  .tabs{width:100%;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .tabs span{white-space:nowrap}
+  .tgrid{columns:1}
+  .checks{grid-template-columns:1fr}
+  .ctaband{padding:34px 22px}
+  .ctaband h2{font-size:24px}
+  .ctaband p{font-size:15px}
+  .ctaband .cta{flex-direction:column;align-items:stretch}
+  .foot{margin-top:44px}
+  .foot .top{grid-template-columns:1fr;gap:26px}
+  .foot .bar{justify-content:flex-start}
+}
+/* small phones */
+@media(max-width:430px){
+  .kpis,.fgrid{grid-template-columns:1fr}
+  .hero h1{font-size:28px}
+  .donutwrap{flex-direction:column;align-items:flex-start}
+  .leg{width:100%}
 }
 </style>
 </head>
