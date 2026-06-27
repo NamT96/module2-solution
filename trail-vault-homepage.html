@@ -120,15 +120,6 @@ img{max-width:100%}
 .osvis .meta small{font-size:11.5px;color:#94a3b8}
 .osvis .when{margin-left:auto;font-size:11px;font-weight:600;color:#cbd5e1}
 
-/* ---------- testimonials ---------- */
-.tgrid{columns:3;column-gap:16px}
-.tcard{background:#fff;border:1px solid #e8edf2;border-radius:14px;padding:18px;margin-bottom:16px;break-inside:avoid}
-.tcard .q{font-size:14px;color:#334155;line-height:1.55}
-.tcard .who{display:flex;align-items:center;gap:11px;margin-top:14px}
-.tcard .av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#06b6d4);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.tcard .who b{font-size:13px;display:block}
-.tcard .who small{font-size:11.5px;color:#94a3b8}
-
 /* ---------- faq ---------- */
 .faq{max-width:760px;margin:0 auto}
 .faq details{background:#fff;border:1px solid #e8edf2;border-radius:13px;padding:4px 18px;margin-bottom:12px}
@@ -170,7 +161,6 @@ img{max-width:100%}
   .kpis,.fgrid{grid-template-columns:repeat(2,1fr)}
   .prow,.os{grid-template-columns:1fr}
   .os{gap:30px}
-  .tgrid{columns:2}
   .shotgrid{grid-template-columns:1fr}
   .shotside{display:none}
   .hero h1{font-size:40px}
@@ -187,14 +177,22 @@ img{max-width:100%}
   .hero .lead{font-size:15px}
   .hero .cta{flex-direction:column;align-items:stretch}
   .hero .cta .btn{justify-content:center}
-  .preview{margin-top:32px;padding:12px;border-radius:14px}
+  /* keep the hero dashboard graphic compact, not a tall single column */
+  .preview{margin-top:32px;padding:11px;border-radius:14px}
+  .preview .kpis{gap:10px}
+  .preview .prow{gap:10px}
+  .kpi{padding:12px 13px}
+  .kpi .lab{font-size:11px}
+  .kpi .val{font-size:20px;margin-top:5px}
+  .kpi .delta{font-size:11px;margin-top:4px}
+  .card{padding:14px}
+  .bars{height:100px}
   .section{padding:40px 0}
   .shead{margin-bottom:28px}
   .shead h2,.os h2{font-size:25px}
   .shead p,.os .lead{font-size:15px}
   .tabs{width:100%;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch}
   .tabs span{white-space:nowrap}
-  .tgrid{columns:1}
   .checks{grid-template-columns:1fr}
   .ctaband{padding:34px 22px}
   .ctaband h2{font-size:24px}
@@ -206,10 +204,12 @@ img{max-width:100%}
 }
 /* small phones */
 @media(max-width:430px){
-  .kpis,.fgrid{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr}          /* feature cards stack; KPIs stay 2-up to keep the graphic short */
+  .kpis{grid-template-columns:repeat(2,1fr)}
   .hero h1{font-size:28px}
-  .donutwrap{flex-direction:column;align-items:flex-start}
-  .leg{width:100%}
+  .donut{width:112px;height:112px}
+  .donut::after{inset:22px}
+  .donutwrap{gap:14px}
 }
 </style>
 </head>
@@ -459,30 +459,6 @@ img{max-width:100%}
         <div class="meta"><b>Client birthday — Julian Beling</b><small>Liberty FS</small></div>
         <div class="when">Personal</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== TESTIMONIALS ===== -->
-<section class="section">
-  <div class="wrap">
-    <div class="shead">
-      <h2>What people say</h2>
-    </div>
-    <div class="tgrid">
-      <div class="tcard"><div class="q">“Our team efficiency has improved by 75% since implementation.”</div><div class="who"><span class="av">DZ</span><div><b>David Zhang</b><small>VP of Sales at GlobalTech Solutions</small></div></div></div>
-      <div class="tcard"><div class="q">“We've seen a 50% increase in conversion rates!”</div><div class="who"><span class="av">MR</span><div><b>Maria Rodriguez</b><small>Customer Success Director at Cloud Dynamics</small></div></div></div>
-      <div class="tcard"><div class="q">“Our sales pipeline visibility has improved tenfold.”</div><div class="who"><span class="av">JW</span><div><b>James Wilson</b><small>Head of Business Development at Velocity Inc</small></div></div></div>
-      <div class="tcard"><div class="q">“Customer communication is now seamless across all regions.”</div><div class="who"><span class="av">SK</span><div><b>Sarah Kim</b><small>Senior Account Executive at Digital First</small></div></div></div>
-      <div class="tcard"><div class="q">“Our customer retention has increased by 40% using their predictive”</div><div class="who"><span class="av">MJ</span><div><b>Marcus Johnson</b><small>Sales Operations Manager at Revenue Pulse</small></div></div></div>
-      <div class="tcard"><div class="q">“Customer service response times have been cut in half.”</div><div class="who"><span class="av">PS</span><div><b>Priya Sharma</b><small>Chief Revenue Officer at Scale Systems</small></div></div></div>
-      <div class="tcard"><div class="q">“Our targeted campaigns now see 85% higher engagement rates.”</div><div class="who"><span class="av">MS</span><div><b>Miguel Santos</b><small>Account Management Director at Grow Corp</small></div></div></div>
-      <div class="tcard"><div class="q">“Perfect for managing eco-conscious customer relationships.”</div><div class="who"><span class="av">LT</span><div><b>Lisa Thompson</b><small>Inside Sales Manager at Quantum Enterprises</small></div></div></div>
-      <div class="tcard"><div class="q">“Secure patient relationship management has never been easier.”</div><div class="who"><span class="av">DP</span><div><b>Daniel Park</b><small>Business Operations Lead at Swift Solutions</small></div></div></div>
-      <div class="tcard"><div class="q">“Perfect for managing student and institution relationships.”</div><div class="who"><span class="av">EA</span><div><b>Emma Anderson</b><small>Director of Client Relations at Peak Partners</small></div></div></div>
-      <div class="tcard"><div class="q">“The most secure CRM solution we've ever used.”</div><div class="who"><span class="av">RC</span><div><b>Robert Chen</b><small>Sales Enablement Manager at Catalyst Group</small></div></div></div>
-      <div class="tcard"><div class="q">“Client communication has never been more efficient.”</div><div class="who"><span class="av">MP</span><div><b>Maya Patel</b><small>Customer Experience Director at Apex Solutions</small></div></div></div>
-      <div class="tcard"><div class="q">“The perfect CRM solution that grows with your business.”</div><div class="who"><span class="av">TO</span><div><b>Thomas O'Brien</b><small>Sales Strategy Manager at Future Dynamics</small></div></div></div>
     </div>
   </div>
 </section>
